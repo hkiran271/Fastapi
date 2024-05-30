@@ -4,14 +4,14 @@ from typing import List
 
 class Employee(BaseModel):
     id: int
-    name: str
-    department: str
-    salary: float
+    section: str
+    year: str
+    count: float
 
 employees_data = [
-    {"id": 1, "name": "John Doe", "department": "Engineering", "salary": 75000.0},
-    {"id": 2, "name": "Jane Smith", "department": "Marketing", "salary": 65000.0},
-    {"id": 3, "name": "Alice Johnson", "department": "HR", "salary": 60000.0}
+    {"id": 1, "section": "A", "year": "first", "count": 100},
+    {"id": 2, "section": "B", "year": "second", "count": 110},
+    {"id": 3, "section": "C", "year": "thrid", "count": 90}
 ]
 
 app = FastAPI()
@@ -27,4 +27,4 @@ def get_employee(employee_id: int):
     for employee in employees_data:
         if employee["id"] == employee_id:
             return employee
-    # raise HTTPException(status_code=404, detail="Employee not found")
+        
